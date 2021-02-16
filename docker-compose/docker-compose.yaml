@@ -1,0 +1,19 @@
+version: "3.1"
+
+services:
+  pingfederate:
+    image: pingidentity/pingfederate:edge
+    environment:
+      - SERVER_PROFILE_PATH=server_profiles/pingfederate
+    env_file:
+      - ~/.pingidentity/devops
+      - pf.env
+      - override.env
+    ports:
+      - 9031:9031
+      - 9999:9999
+    networks:
+      - pingnet-dmz
+
+networks:
+    pingnet-dmz:
