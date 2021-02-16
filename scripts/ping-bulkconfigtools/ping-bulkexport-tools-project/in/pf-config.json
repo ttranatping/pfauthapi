@@ -6,53 +6,14 @@
           ],
           "replace-name": "PING_IDENTITY_PASSWORD",
           "is-apply-envfile": false
-        },
-	{
-	  "config-names":[
-	    "idp_adapters_items_consentAgentlessAdapter_configuration_fields_Pass_Phrase_value"
-	  ],
-  	  "replace-name": "CONSENT_APP_agentless_password",
-  	  "is-apply-envfile": false
-  	},
-	{
-	  "config-names":[
-	     "oauth_clientRegistrationPolicies_items_cdrAURegister_configuration_fields_JWKS_URL_value"
-	  ],
-	  "replace-name": "REGISTER_JWKS_ENDPOINT",
-          "is-apply-envfile": false
 	}
 
   ],
   "search-replace":[
-    {
-      "search": "dc=data-holder,dc=com",
-      "replace": "${USER_BASE_DN}",
-      "apply-env-file": false
-    },
-    {
-      "search": "https://consent.data-holder.local",
-      "replace": "${CONSENT_BASEURL}",
-      "apply-env-file": false
-    },
-    {
-      "search": "data-holder.local",
-      "replace": "${BASE_HOSTNAME}",
-      "apply-env-file": false
-    }
   ],
   "remove-config":[
-  	{
-  	  "key": "id",
-	  "value": "ProvisionerDS"
-  	}
   ],
   "expose-parameters":[
-    {
-      "parameter-name": "value",
-      "unique-identifiers": [
-          "name=JWKS URL"
-      ]
-    },
     {
       "parameter-name": "fileData",
       "unique-identifiers": [
